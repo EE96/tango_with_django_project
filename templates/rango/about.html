@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+    <body>
+        <h1>Rango (TechPriest) says...</h1>
+        <div>
+            here is the about page. <br />
+            <strong>{{ techmessage }}</strong><br />
+        </div>
+        <div>
+            <a href="/rango/">Index</a><br />
+            <img src="{% static 'images/techpriest.jpg' %}"
+                alt="Picture of TechPriest of Mars" /> 
+                <!-- New line -->
+        </div>
+        <div>
+            <img src = "{{ MEDIA_URL }}cat.jpg"
+            alt = "Picture of a cat (of Mars)">
+        </div>
+    </body>
+</html>
