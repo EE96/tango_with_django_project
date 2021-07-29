@@ -8,13 +8,62 @@
         <h1>Rango (TechPriest) says...</h1>
         <div>
             hey there partner! <br />
-            <strong>{{ boldmessage }}</strong><br />
+            <strong>{{ boldmessage }}</strong>
         </div>
+
+        <h2>Most Liked Categories</h2>
         <div>
-            <a href="/rango/about/">About</a><br />
+        {% if categories %}
+            <ul>
+            {% for category in categories %}
+            <li>
+                 <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+            </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+        </div>
+
+        <h2>Most Viewed Pages</h2>
+        <div>
+        {% if pages %}
+            <h1>{{ page.title }}</h1>
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>No pages currently in category.</strong>
+            {% endif %}
+        {% else %} 
+            <strong>There are no pages present.</strong>
+        {% endif %} 
+        </div>
+
+
+
+
+
+        <div>
+            <a href="/rango/about/">About Rango</a><br />
             <img src="{% static 'images/techpriest.jpg' %}"
-                alt="Picture of TechPriest of Mars" /> 
-                <!-- New line -->
+            alt="Picture of a TechPriest of Mars" />
         </div>
     </body>
 </html>
+
+
+
+
+
+            <!-- <a href="/rango/about/">About</a><br />
+            <img src="{% static 'images/techpriest.jpg' %}"
+                alt="Picture of a TechPriest of Mars" /> 
+                <!-- New line -->
+        <!-- </div>
+    </body>
+</html> --> -->
