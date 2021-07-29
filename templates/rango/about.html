@@ -1,10 +1,31 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
-    <body>
+
+
+{% block title_block %}
+    About Rango
+{% endblock %}
+    
+
+{% block body_block %}
+<h1>TechPriest says...</h1>
+<div>
+    here is the about page. <br />
+    <strong>{{ techmessage }}</strong><br />
+</div>
+<div>
+    <a href="/rango/">Index</a><br />
+    <img src="{% static 'images/techpriest.jpg' %}"
+        alt="Picture of a TechPriest of Mars" /> 
+        <!-- New line -->
+</div>
+<div>
+    <img src = "{{ MEDIA_URL }}cat.jpg"
+    alt = "Picture of a cat (of Mars)">
+</div>
+{% endblock %} 
+    
+    <!-- <body>
         <h1>Rango (TechPriest) says...</h1>
         <div>
             here is the about page. <br />
@@ -15,10 +36,10 @@
             <img src="{% static 'images/techpriest.jpg' %}"
                 alt="Picture of a TechPriest of Mars" /> 
                 <!-- New line -->
-        </div>
+        <!-- </div>
         <div>
             <img src = "{{ MEDIA_URL }}cat.jpg"
             alt = "Picture of a cat (of Mars)">
         </div>
     </body>
-</html>
+</html> --> -->
